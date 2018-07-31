@@ -12,8 +12,8 @@ public class BookTest {
     @Before
     public void before(){
         // create new Book instances
-        book1 = new Book("Alice in Wonderland");
-        book2 = new Book("The Cat in the Hat");
+        book1 = new Book("Alice in Wonderland", Genre.FANTASY);
+        book2 = new Book("The Cat in the Hat", Genre.ADVENTURE);
 
     }
 
@@ -25,5 +25,10 @@ public class BookTest {
     @Test
     public void hasName2(){
         assertEquals("The Cat in the Hat", book2.getTitle());
+    }
+
+    @Test
+    public void hasGenre1(){
+        assertEquals( Genre.FANTASY, book1.getGenre());
     }
 }

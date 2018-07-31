@@ -23,8 +23,8 @@ public class LibraryTest {
         // create new Library and Book instances
         library1 = new Library(20, fictionBooks);
         library2 = new Library(1, fictionBooks);
-        book1 = new Book("The Lion, the Witch and the Wardrobe");
-        book2 = new Book("Harry Potter and the Chamber of Secrets");
+        book1 = new Book("The Lion, the Witch and the Wardrobe", Genre.ADVENTURE);
+        book2 = new Book("Harry Potter and the Chamber of Secrets", Genre.FANTASY);
     }
 
     @Test

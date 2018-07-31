@@ -4,7 +4,7 @@ public class Library {
 
     // declare the variables
     private int capacity;
-    private ArrayList<Book> books;
+    public ArrayList<Book> books;
     private int current_stock;
 
     // constructor (takes two args)
@@ -15,7 +15,7 @@ public class Library {
     }
 
     public int countBooks(){
-        // count the number of elements in the ArrayList
+        // count the number of elements in the ArrayList books
         return this.books.size();
     }
 
