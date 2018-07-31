@@ -50,13 +50,13 @@ public class Library {
 
     // for each book in books
     // if HashMap genreHash already contains a key equal to that book's genre
-    // set the value of that key to 1 and add 1
+    // get the value of that key and add 1 to it
     // else put a key value pair of that book's genre => 1 into the genreHash
     public int countBooksByGenre(Genre genre){
         for (int i = 0; i < this.books.size(); i++){
             Book book = books.get(i);
             if (genreHash.containsKey(book.getGenre())){
-                genreHash.put(book.getGenre(), 1 + genreHash.get(book.getGenre()));
+                genreHash.put(book.getGenre(), genreHash.get(book.getGenre()) + 1);
             }
             else {
                 genreHash.put(book.getGenre(), 1);
