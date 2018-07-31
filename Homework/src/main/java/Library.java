@@ -1,10 +1,12 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Library {
 
     // declare the variables
     private int capacity;
     public ArrayList<Book> books;
+    public HashMap<Genre, Integer> genreHash;
     private int current_stock;
 
     // constructor (takes two args)
@@ -12,6 +14,7 @@ public class Library {
         // assign arguments to variables
         this.capacity = capacity;
         this.books = listofBooks;
+        this. genreHash = new HashMap<>();
     }
 
     public int countBooks(){
@@ -43,6 +46,24 @@ public class Library {
         else {
             return "There's not enough room so the book wasn't added";
         }
+    }
+
+    // for each book in books
+    // if HashMap genreHash already contains a key equal to that book's genre
+    // set the value of that key to 1 and add 1
+    // else put a key value pair of that book's genre => 1 into the genreHash
+    public int countBooksByGenre(Genre genre){
+        for (int i = 0; i < this.books.size(); i++){
+            Book book = books.get(i);
+            if (genreHash.containsKey(book.getGenre())){
+                genreHash.put(book.getGenre(), 1 + genreHash.get(book.getGenre()));
+            }
+            else {
+                genreHash.put(book.getGenre(), 1);
+            }
+
+        }
+        return genreHash.get(genre);
     }
 
 }
