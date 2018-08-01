@@ -5,8 +5,8 @@ public class Library {
 
     // declare the variables
     private int capacity;
-    public ArrayList<Book> books;
-    public HashMap<Genre, Integer> genreHash;
+    private ArrayList<Book> books;
+    private HashMap<Genre, Integer> genreHash;
     private int current_stock;
 
     // constructor (takes two args)
@@ -46,6 +46,10 @@ public class Library {
         else {
             return "There's not enough room so the book wasn't added";
         }
+    }
+
+    public void  removeBook(Book book){
+        this.books.remove(book);
     }
 
     // for each book in books

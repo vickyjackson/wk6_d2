@@ -18,6 +18,6 @@ public class Borrower {
     // add a book to the collection
     public void takeBook(Book book, Library library){
         this.collection.add(book);
-        library.books.remove(book);
+        library.removeBook(book);
     }
 }
